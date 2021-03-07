@@ -1,7 +1,6 @@
-(async function main() {
-  let localStream = null;
-  let peer = null;
+const Peer = window.Peer;
 
+(async function main() {
   const localVideo = document.getElementById('js-local-video');
   const localId = document.getElementById('js-local-id');
   const remoteVideo = document.getElementById('js-remote-video');
@@ -40,7 +39,7 @@
     });
   }
 
-  localStream = await navigator.mediaDevices.getUserMedia({
+  const localStream = await navigator.mediaDevices.getUserMedia({
     audio: true,
     video: {
       width: {
@@ -55,7 +54,7 @@
   });
   localVideo.srcObject = localStream;
 
-  peer = new Peer({
+  const peer = new Peer({
     key: '6b3172b3-ae11-456d-9049-699e0f260a49', //API-key
     debug: 3 //ログレベル：完全
   });
