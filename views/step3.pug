@@ -7,4 +7,12 @@ block content
   h1= title
   div(class="videos-container")
     video(id="js-local-video" autoplay muted)
+  div(class="controller-container")
+    p Your id: 
+      span(id="js-local-id") ...
+    input(type="text" placeholder="Join room..." id="js-room-id")
+    button(id="js-join-trigger") Join
+    button(id="js-leave-trigger") Leave
+    pre(class="messages" id="js-messages")
+    
   script(type='text/javascript' src="/javascripts/step3.js")
